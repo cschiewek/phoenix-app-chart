@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+appPort: 4000
+
 image:
   repository: cschiewek/phoenix-chat-example
   tag: latest
@@ -14,13 +16,12 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   path: /
-  hosts:
-    - chart-example.local
+  hosts: []
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
